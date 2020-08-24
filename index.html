@@ -37,9 +37,7 @@ var dental = [
 ];
 
 //Agregar código para el desafio 2 aquí
-
 // 1. Agregar las siguientes horas al arreglo de Traumatología:
-document.write('<p>1.</p>');
 traumatologia.push(
     {hora: '9:00',  especialista: 'RENÉ POBLETE', paciente: 'ANA GELLONA',     rut: '13123329-7', prevision: 'ISAPRE'},
     {hora: '9:30', especialista: 'MARIA SOLAR',          paciente: 'RAMIRO ANDRADE ',    rut: '12221451-K', prevision: 'FONASA'},
@@ -48,11 +46,6 @@ traumatologia.push(
     {hora: '12:00', especialista: 'MATIAS ARAVENA',      paciente: 'SUSANA POBLETE',       rut: '14345656-6', prevision: 'FONASA'},
 );
 
-for (var i = 0; i < traumatologia.length; i++) {
-document.write(traumatologia[i].hora + " " + '-' + " " + traumatologia[i].especialista + " " + '-' + " " + traumatologia[i].paciente + " " + '-' + " " + traumatologia[i].rut + " " + '-' + " " + traumatologia[i].prevision + " " + " </br> ");
-document.write( " </br> ");
-}
-
 // 2. Eliminar el primer y último elemento del arreglo de Radiología.
 radiologia.pop();
 radiologia.shift();
@@ -60,7 +53,6 @@ radiologia.shift();
 // 3. Imprimir en la página HTML, mediante document.write y/o la funciones que estime
 // conveniente, la lista de consultas médicas de Dental. Sin embargo, debe hacerlo separando por
 // un guión cada dato desplegado y cada fila de información debe estar separada por un párrafo.
-document.write('<p>3.</p>');
 for (var i = 0; i < dental.length; i++) {
 document.write(dental[i].hora + " " + '-' + " " + dental[i].especialista + " " + '-' + " " + dental[i].paciente + " " + '-' + " " + dental[i].rut + " " + '-' + " " + dental[i].prevision + " " + " </br> ");
 document.write( " </br> ");
@@ -68,7 +60,6 @@ document.write( " </br> ");
 
 // 4. Imprimir un listado total de todos los pacientes que se atendieron en el centro médico. Para ésto,
 // deberá unir todos los nombres de pacientes e imprimir uno por cada párrafo.
-document.write('<p>4.</p>');
 var pacientesTotal = radiologia.concat(traumatologia, dental);
 for (var i = 0; i < pacientesTotal.length; i++) {
 document.write(pacientesTotal[i].paciente + " </br> ");
@@ -78,11 +69,10 @@ document.write( " </br> ");
 // 5. Modificar mediante funciones las previsiones de Dental: aquellas que indican ser FONASA
 // cambiarlas por ISAPRE y viceversa. Luego, imprimir este resultado junto con el rut asociado a
 // dicha consulta, separados por punto y coma.
-document.write('<p>5.</p>');
 dental = dental.map(function(info) {
-if (info.prevision = 'FONASA') {
+if (info.prevision === 'FONASA') {
     info.prevision = 'ISAPRE';
-} else if (info.prevision = 'ISAPRE') {
+} else if (info.prevision === 'ISAPRE') {
     info.prevision = 'FONASA';
 } 
 return info;
@@ -92,7 +82,6 @@ for (var i = 0; i < dental.length; i++) {
 document.write(dental[i].rut + " " + "; " + " " + dental[i].prevision + " " + " </br> ");
 document.write( " </br> ");
 }
-
 //Agregar código para el desafio 2 aquí
 
 document.write(`<p>Cantidad de atenciones para Radiología: ${radiologia.length}</p>`);
